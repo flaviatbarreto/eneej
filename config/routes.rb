@@ -1,5 +1,7 @@
 Eneej::Application.routes.draw do
 
+	resources :comments	
+	resources :news	
 	resources :sessions
 	resources :users
 
