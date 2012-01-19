@@ -1,0 +1,16 @@
+<% #<h1>Comments#new</h1> %>
+<%# <p>Find me in app/views/comments/new.html.erb</p> %>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit "Cadastrar" %>
+  </p>
+<% end %>

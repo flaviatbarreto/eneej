@@ -1,0 +1,38 @@
+
+
+<p>
+  <b>Title:</b>
+  <%= @news.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @news.body.html_safe %>
+</p>
+<hr />
+
+<br />
+
+<%= render :partial => 'comment', :collection => @news.comments %> 
+
+<% form_for @comment do|f| %>
+  <%= f.hidden_field :news_id %>
+
+  <p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+  </p>
+ 
+ 
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+ 
+  <p>
+    <%= f.submit "News Comment" %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>
