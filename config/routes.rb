@@ -1,5 +1,10 @@
 Eneej::Application.routes.draw do
 
+	resources :sessions
+	resources :users
+
+  match '/logout', :to=> 'sessions#destroy'
+
 	root :to => 'pages#home'
 
   # The priority is based upon order of creation:
