@@ -1,0 +1,90 @@
+  
+   
+    <div id="menu">
+           
+           <div id="menu_central">
+           
+              <div id="marcas">
+                <div id="marca_eneej"> <%= image_tag "marca_eneej.png" %> </div>
+                <div id="marca_conaje"> </div>
+              </div>
+              <div id="menu_options">
+                  <div class="op_menu"> <a href="#"> <p>Os eventos</p> </a> </div>
+                  <div class="op_menu"><a href="#"> <p>Notícias </p></a> </div>
+                  <div class="op_menu"> <a href="#"><p>Programação</p></a>  </div>
+                  <div class="op_menu"> <a href="#"><p>Galerias</p></a>  </div>
+                  <div class="op_menu"> <a href="#"><p>Local </p></a> </div>
+                  <div class="op_menu"> <a href="#"><p>Contato</p> </a> </div>
+             
+              </div>
+              
+              <div id="redes_menu">
+                    <a href="#" target="_blank"> <div id="rede1"> </div> </a>
+                    <a href="#" target="_blank"> <div id="rede2"> </div> </a>
+                    <a href="#" target="_blank"> <div id="rede3"> </div> </a>
+             </div>
+          </div>
+            
+    </div>
+<div id="all">
+    <div id="content1"> 
+        <div id="interno1">
+            <div id="top_content1" >
+                
+                <div id="count">
+                    <div id="contador">
+                        
+                    </div>
+                </div>
+            </div>
+          
+            <div id="banner"> 
+
+            </div>
+
+            <div id="bottom_content1"> 
+                <h1 >  PATROCINADORES, APOIO E REALIZAÇÃO </h1>
+            </div>
+      
+        </div>
+    </div>
+    
+    
+    
+</div> <!-- FINAL DA DIV ALL -->
+
+
+<script type="text/javascript">
+function atualizaContador(YY,MM,DD,HH,MI,saida) {
+	var SS = 00;
+	var hoje = new Date();
+	var futuro = new Date(YY,MM-1,DD,HH,MI,SS);
+
+	var ss = parseInt((futuro - hoje) / 1000);
+	var mm = parseInt(ss / 60);
+	var hh = parseInt(mm / 60);
+	var dd = parseInt(hh / 24);
+
+	ss = ss - (mm * 60);
+	mm = mm - (hh * 60);
+	hh = hh - (dd * 24);
+
+	var faltam = '';
+	faltam += (dd && dd > 1) ? dd+' &nbsp; ' : (dd==1 ? '1 &nbsp; ' : ' &nbsp;');
+	faltam += (toString(hh).length) ? hh+' &nbsp; ' : '  &nbsp; ';
+	faltam += (toString(mm).length) ? mm+' &nbsp;  ' : ' &nbsp;  ';
+	faltam += ss;
+
+	if (dd+hh+mm+ss > 0) {
+		document.getElementById(saida).innerHTML = faltam;
+		setTimeout(function(){atualizaContador(YY,MM,DD,HH,MI,saida)},1000);
+	} else {
+		document.getElementById(saida).innerHTML = '';
+		setTimeout(function(){atualizaContador(YY,MM,DD,HH,MI,saida)},1000);
+	}
+}
+
+window.onload=function(){
+	atualizaContador('2012','08','14','23','00','contador');
+}
+</script>
